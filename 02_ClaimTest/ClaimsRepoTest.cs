@@ -30,9 +30,16 @@ namespace _02_ClaimTest
         private Claims _content;
         private ClaimsRepo _repo;
         [TestMethod]
-        public void IsValid()
+        public void TestTimeLapse_ShouldReturnFalse()
         {
-
+            Claims newClaim = new Claims();
+            DateTime personalClaim = new DateTime();
+            DateTime incidentDate = new DateTime();
+            personalClaim = new DateTime(2020, 02, 18);
+            incidentDate = new DateTime(2019, 12, 18);
+            TimeSpan dayslapsed = personalClaim - incidentDate;
+            double totalDays = dayslapsed.TotalDays;
+            Assert.IsTrue(totalDays > 30);
         }
     }
 }

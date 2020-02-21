@@ -10,7 +10,7 @@ namespace _01_Cafe
     {
         //This is where to write the CRUD for the MenuItem class
         protected readonly List<MealItem> _menu = new List<MealItem>();
-        public bool AddMealToMenu(MealItem content)
+        public bool AddMeaToMenu(MealItem content)
         {
             int initialCount = _menu.Count();
             _menu.Add(content);
